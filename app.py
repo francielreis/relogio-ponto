@@ -37,8 +37,10 @@ def registrar():
 
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO ponto (nome, tipo, data_hora) VALUES (?, ?, ?)",
-                   (nome, tipo, data_hora))
+    cursor.execute(
+        "INSERT INTO ponto (nome, tipo, data_hora) VALUES (?, ?, ?)",
+        (nome, tipo, data_hora)
+    )
     conn.commit()
     conn.close()
 
